@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbs Up / Thumbs Down Survey</title>
+    <style>
+        .survey {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .button {
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+            margin: 10px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey">
+        <h2>Did you enjoy this content?</h2>
+        <button class="button" id="thumbsUp">👍</button>
+        <button class="button" id="thumbsDown">👎</button>
+
+        <div class="result">
+            <p>Thumbs Up: <span id="upVotes">0</span></p>
+            <p>Thumbs Down: <span id="downVotes">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let upVotes = 0;
+        let downVotes = 0;
+
+        document.getElementById("thumbsUp").addEventListener("click", () => {
+            upVotes++;
+            document.getElementById("upVotes").textContent = upVotes;
+        });
+
+        document.getElementById("thumbsDown").addEventListener("click", () => {
+            downVotes++;
+            document.getElementById("downVotes").textContent = downVotes;
+        });
+    </script>
+</body>
+</html>
